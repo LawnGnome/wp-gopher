@@ -1,0 +1,11 @@
+service gopher
+{
+	disable = no
+	id = gopher
+	socket_type = stream
+	port = 70
+	protocol = tcp
+	user = nobody
+	wait = no
+	server = /usr/local/sbin/wp-gopher.py
+}

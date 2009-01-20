@@ -1,0 +1,43 @@
+wp-gopher 0.2 (special LCA 2009 edition)
+
+
+Description
+-----------
+
+Provides, in conjunction with an inetd superserver, a Gopher interface to
+Wordpress 2.2 and later. (Valid as of Wordpress 2.7, anyway.)
+
+
+Requirements
+------------
+
+- Some sort of *nix. I've tested it on Linux, but really, anything should do.
+- Python 2.4 or later.
+- Python-MySQLdb 1.2 or later.
+- A Wordpress installation with a database layout compatible with WP 2.2-2.7.
+
+
+Installation
+------------
+
+1. Copy wp-gopher.py to a suitable location. /usr/local/sbin would probably do.
+2. Copy wp-gopher.ini.dist to /etc/wp-gopher.ini and alter the variables to
+   those matching the Wordpress installation.
+3. Set up inetd to pass gopher requests to wp-gopher.py. The supplied
+   gopher.xinetd file can be used to configure xinetd, assuming wp-gopher.py is
+   installed in /usr/local/sbin.
+4. Reload (x)inetd and enjoy.
+
+
+Problems, Reports, Patches
+--------------------------
+
+Send them to Adam Harvey at wpgopher@adamharvey.name.
+
+
+Notes
+-----
+
+- It's weird talking about yourself in the third person (see above).
+- This is technically correct. The best kind of correct.
+- No, I don't know why I wrote this either.

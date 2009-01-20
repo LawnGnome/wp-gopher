@@ -1,0 +1,12 @@
+[database]
+database = wordpress
+host = localhost
+password = password
+user = username
+
+[blog]
+copyright = Copyright (C) 2007 Joe Q. Sixpack.
+default = 10
+domain = gopher.domain.name
+port = 70
+title = Blog Title
