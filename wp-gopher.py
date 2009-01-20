@@ -34,7 +34,7 @@ def printitem(type, description, selector = "", domain = None, port = None):
 	if not port:
 		port = config.getint("blog", "port")
 
-	print "%s%s\t%s\t%s\t%d\r\n" % (type, description, selector, domain, port),
+	print "%s%s\t/%s\t%s\t%d\r\n" % (type, description, selector, domain, port),
 
 def printtitle(pagetitle = None):
 	"""Prints a title as an information message."""
@@ -79,7 +79,7 @@ def post(name):
 
 	global config
 	global dbh
-	
+
 	if name == "all":
 		return index()
 	elif name == "":
@@ -116,7 +116,7 @@ def post(name):
 """ % (title, pagetitle, title, pagetitle, body, config.get("blog", "domain"), config.get("blog", "copyright"))
 
 try:
-	post(sys.stdin.readline().strip("\r\n"))
+	post(sys.stdin.readline().strip("\r\n/"))
 except Exception, e:
 	printtitle("Error")
 	printitem("3", str(e))
