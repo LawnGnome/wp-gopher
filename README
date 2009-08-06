@@ -1,11 +1,11 @@
-wp-gopher 0.2 (special LCA 2009 edition)
+wp-gopher 0.2.1 (Привет to UTF-8 edition)
 
 
 Description
 -----------
 
 Provides, in conjunction with an inetd superserver, a Gopher interface to
-Wordpress 2.2 and later. (Valid as of Wordpress 2.7, anyway.)
+Wordpress 2.2 and later. (Valid as of Wordpress 2.8, anyway.)
 
 
 Requirements
@@ -14,7 +14,7 @@ Requirements
 - Some sort of *nix. I've tested it on Linux, but really, anything should do.
 - Python 2.4 or later.
 - Python-MySQLdb 1.2 or later.
-- A Wordpress installation with a database layout compatible with WP 2.2-2.7.
+- A Wordpress installation with a database layout compatible with WP 2.2-2.8.
 
 
 Installation
