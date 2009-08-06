@@ -1,0 +1,9 @@
+Version 0.2.1 (2009-08-06)
+
+* Added rudimentary charset support.
+
+Version 0.2.0 (2009-01-20)
+
+* Added README and LICENSE files.
+* Fixed an issue in URL generation that omitted a slash that would make URLs
+  more readable.
