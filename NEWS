@@ -7,3 +7,7 @@ Version 0.2.0 (2009-01-20)
 * Added README and LICENSE files.
 * Fixed an issue in URL generation that omitted a slash that would make URLs
   more readable.
+
+Version 0.1.0 (2007-08-30)
+
+* Initial version.
