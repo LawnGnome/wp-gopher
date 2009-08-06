@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Wordpress Gopher interface 0.2. Be afraid.
+# Wordpress Gopher interface 0.2.1. Be afraid.
 
 # The MIT License
 # 
@@ -113,6 +113,7 @@ def post(name):
 	c.execute("SELECT post_title, post_content FROM posts WHERE post_type = %s AND post_status = %s AND post_name = %s", ("post", "publish", name))
 	row = c.fetchone()
 
+	charset = config.get("blog", "charset")
 	title = config.get("blog", "title")
 
 	if row:
@@ -122,9 +123,11 @@ def post(name):
 		body = "Post not found"
 
 	print """
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>%s :: %s</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=%s" />
 	</head>
 	<body>
 		<h1>%s :: %s</h1>
@@ -137,7 +140,7 @@ def post(name):
 		</p>
 	</body>
 </html>
-""" % (title, pagetitle, title, pagetitle, body, config.get("blog", "domain"), config.get("blog", "copyright"))
+""" % (title, pagetitle, charset, title, pagetitle, body, config.get("blog", "domain"), config.get("blog", "copyright"))
 
 try:
 	post(sys.stdin.readline().strip("\r\n/"))

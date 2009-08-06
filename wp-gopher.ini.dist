@@ -5,6 +5,7 @@ password = password
 user = username
 
 [blog]
+charset = UTF-8
 copyright = Copyright (C) 2007 Joe Q. Sixpack.
 default = 10
 domain = gopher.domain.name
