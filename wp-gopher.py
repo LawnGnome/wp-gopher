@@ -32,10 +32,10 @@ config = ConfigParser.ConfigParser()
 config.read(("/etc/wp-gopher.ini", "wp-gopher.ini"))
 
 dbh = MySQLdb.connect(host = config.get("database", "host"),
-		      user = config.get("database", "user"),
-		      passwd = config.get("database", "password"),
-		      db = config.get("database", "database")
-		     )
+	user = config.get("database", "user"),
+	passwd = config.get("database", "password"),
+	db = config.get("database", "database")
+)
 
 def printblankline():
 	printitem("i", "")
@@ -148,4 +148,4 @@ except Exception, e:
 	printtitle("Error")
 	printitem("3", str(e))
 
-# vim:set nocin ai ts=8 noet:
+# vim:set nocin ai ts=8 sw=8 noet:
