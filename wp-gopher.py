@@ -97,6 +97,37 @@ def index(limit = None):
 		printitem("i", "All blog entries are shown.")
 
 	printblankline()
+	printitem("7", "Search this blog")
+
+	printblankline()
+	printcopyright()
+
+def search(term):
+	"""Searches for a given term."""
+
+	global dbh
+
+	# Surround the term in the appropriate MySQL regex word boundary
+	# markers.
+	searchterm = "[[:<:]]" + term + r"[[:>:]]"
+
+	c = dbh.cursor()
+	c.execute("SELECT post_name, post_date, post_title FROM posts WHERE post_type = %s AND post_status = %s AND (post_title RLIKE %s OR post_content RLIKE %s) ORDER BY post_date DESC", ("post", "publish", searchterm, searchterm))
+	rows = c.fetchall()
+
+	printtitle("Search Results :: %s" % term)
+	printblankline()
+
+	if len(rows) > 0:
+		for row in rows:
+			printitem("h", "%s (%s)" % (row[2], row[1]), row[0])
+	else:
+		printitem("i", "No entries were found.")
+
+	printblankline()
+	printitem("1", "View new entries", "")
+
+	printblankline()
 	printcopyright()
 
 def post(name):
@@ -109,6 +140,9 @@ def post(name):
 		return index()
 	elif name == "":
 		return index(config.getint("blog", "default"))
+	elif "\t" in name:
+		(selector, term) = name.split("\t", 1)
+		return search(term)
 
 	c = dbh.cursor()
 	c.execute("SELECT post_title, post_content FROM posts WHERE post_type = %s AND post_status = %s AND post_name = %s", ("post", "publish", name))
