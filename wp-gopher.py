@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-# Wordpress Gopher interface 0.2.1. Be afraid.
+# Wordpress Gopher interface 0.3.0. Be afraid.
 
 # The MIT License
 # 
-# Copyright (c) 2007-09 Adam Harvey
+# Copyright (c) 2007-10 Adam Harvey
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
