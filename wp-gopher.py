@@ -84,6 +84,7 @@ def index(limit = None):
 		rows = c.fetchall()
 
 	printtitle()
+	printblankline()
 
 	for row in rows:
 		printitem("h", "%s (%s)" % (row[2], row[1]), row[0])
